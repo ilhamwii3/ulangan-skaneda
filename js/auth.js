@@ -1,3 +1,7 @@
+alert("File auth.js berhasil dimuat!");
+
+async function login() { ... // (sisanya biarkan sama)
+
 async function login() {
     try {
         const email = document.getElementById('login-email').value.trim();

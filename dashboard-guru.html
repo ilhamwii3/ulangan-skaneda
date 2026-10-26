@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru - Ulangan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Panel Guru</h1>
+        <button class="btn btn-danger" style="width: auto; padding: 5px 15px;" onclick="logout()">Logout</button>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-header-teal"><h3>Tambah Soal Baru</h3></div>
+            <form id="form-soal" onsubmit="simpanSoal(event)">
+                <div class="form-group"><label>Mata Pelajaran</label><input type="text" id="soal-mapel" class="form-control" required></div>
+                <div class="form-group"><label>Pertanyaan</label><textarea id="soal-pertanyaan" class="form-control" rows="3" required></textarea></div>
+                <div class="form-group"><label>Opsi A</label><input type="text" id="opsi-a" class="form-control" required></div>
+                <div class="form-group"><label>Opsi B</label><input type="text" id="opsi-b" class="form-control" required></div>
+                <div class="form-group"><label>Opsi C</label><input type="text" id="opsi-c" class="form-control" required></div>
+                <div class="form-group"><label>Opsi D</label><input type="text" id="opsi-d" class="form-control" required></div>
+                <div class="form-group">
+                    <label>Kunci Jawaban</label>
+                    <select id="soal-kunci" class="form-control" required>
+                        <option value="">-- Pilih --</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan Soal</button>
+            </form>
+        </div>
+        <div class="card">
+            <div class="card-header-teal" style="background-color: var(--bg-dark);"><h3>Buat Ujian Baru</h3></div>
+            <form id="form-ujian" onsubmit="buatUjian(event)">
+                <div class="form-group"><label>Judul Ujian</label><input type="text" id="ujian-judul" class="form-control" required></div>
+                <div class="form-group"><label>Durasi (Menit)</label><input type="number" id="ujian-durasi" class="form-control" required></div>
+                
+                <!-- KELAS PESERTA SUDAH MENJADI SELECT -->
+                <div class="form-group">
+                    <label>Kelas Peserta</label>
+                    <select id="ujian-kelas" class="form-control" required>
+                        <option value="">-- Pilih Kelas --</option>
+                        <option value="X RPL 2">X RPL 2</option>
+                        <option value="X RPL 3">X RPL 3</option>
+                        <option value="X APHP 2">X APHP 2</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Buat Ujian (Draf)</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>ULANGAN - SMKN 2 KOTA MOJOKERTO</p>
+        <p>&copy; 2026 Muhammad Ilham Dwi Pramesdi. All Rights Reserved.</p>
+        <p>Dikembangkan oleh Muhammad Ilham Dwi Pramesdi</p>
+    </footer>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/guru.js"></script>
+</body>
+</html>

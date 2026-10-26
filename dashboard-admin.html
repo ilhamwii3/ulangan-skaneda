@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Ulangan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Admin Panel</h1>
+        <button class="btn btn-danger" style="width: auto; padding: 5px 15px;" onclick="logout()">Logout</button>
+    </nav>
+    <div class="container">
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <div class="card" style="flex: 1; text-align: center;"><h4>Total Siswa</h4><h2 id="stat-siswa" style="color: var(--bg-teal);">0</h2></div>
+            <div class="card" style="flex: 1; text-align: center;"><h4>Total Guru</h4><h2 id="stat-guru" style="color: var(--bg-dark);">0</h2></div>
+        </div>
+        <div class="card">
+            <h3>Manajemen Pengguna</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem;">
+                    <thead>
+                        <tr style="background-color: var(--bg-green); text-align: left;">
+                            <th style="padding: 8px; border: 1px solid #ddd;">Username</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Email</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Kelas</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Absen</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Role</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-users"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>ULANGAN - SMKN 2 KOTA MOJOKERTO</p>
+        <p>&copy; 2026 Muhammad Ilham Dwi Pramesdi. All Rights Reserved.</p>
+        <p>Dikembangkan oleh Muhammad Ilham Dwi Pramesdi</p>
+    </footer>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    <script>loadAdminDashboard();</script>
+</body>
+</html>

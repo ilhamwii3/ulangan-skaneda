@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi - Ulangan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Absensi Hari Ini</h1>
+        <button class="btn btn-danger" style="width: auto; padding: 5px 15px;" onclick="logout()">Logout</button>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h3>Pilih Status Kehadiran</h3>
+            <button class="btn btn-primary" style="margin-top: 10px;" onclick="isiAbsensi('hadir')">Hadir</button>
+            <button class="btn btn-dark" style="margin-top: 10px;" onclick="isiAbsensi('sakit')">Sakit</button>
+            <button class="btn" style="margin-top: 10px; background: var(--bg-yellow); color: var(--text-dark);" onclick="isiAbsensi('izin')">Izin</button>
+            <button class="btn btn-danger" style="margin-top: 10px;" onclick="isiAbsensi('alfa')">Alfa</button>
+        </div>
+    </div>
+    <footer>
+        <p>ULANGAN - SMKN 2 KOTA MOJOKERTO</p>
+        <p>&copy; 2026 Muhammad Ilham Dwi Pramesdi. All Rights Reserved.</p>
+        <p>Dikembangkan oleh Muhammad Ilham Dwi Pramesdi</p>
+    </footer>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/absensi.js"></script>
+</body>
+</html>

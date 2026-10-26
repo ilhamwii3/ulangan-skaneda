@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian - Ulangan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="camera-box"><video id="video" autoplay playsinline></video></div>
+    <nav class="navbar" style="padding-right: 140px;">
+        <h1 style="font-size: 1rem;">Ujian Berlangsung</h1>
+        <span id="timer" style="font-weight: bold; color: var(--bg-yellow);">60:00</span>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <p id="no-soal" style="color: var(--bg-teal); font-weight: bold;">Soal 1</p>
+            <h3 id="pertanyaan" style="margin: 10px 0;">Memuat soal...</h3>
+            <div id="opsi-jawaban" class="form-group"></div>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button class="btn btn-dark" onclick="prevQuestion()">Sebelumnya</button>
+                <button class="btn btn-primary" onclick="nextQuestion()">Berikutnya</button>
+            </div>
+            <button class="btn btn-danger" style="margin-top: 10px;" onclick="kumpulkanUjian()">Kumpulkan Ujian</button>
+            <button class="btn" style="margin-top: 10px; background: var(--bg-green); color: var(--text-dark);" onclick="ambilSnapshot()">📸 Ambil Snapshot</button>
+        </div>
+    </div>
+    <footer>
+        <p>ULANGAN - SMKN 2 KOTA MOJOKERTO</p>
+        <p>&copy; 2026 Muhammad Ilham Dwi Pramesdi. All Rights Reserved.</p>
+        <p>Dikembangkan oleh Muhammad Ilham Dwi Pramesdi</p>
+    </footer>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ujian.js"></script>
+    <script>
+        function startTimer(seconds) {
+            const el = document.getElementById('timer');
+            setInterval(() => {
+                if (seconds <= 0) return;
+                seconds--;
+                const m = Math.floor(seconds / 60), s = seconds % 60;
+                el.innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
+            }, 1000);
+        }
+        startTimer(3600); initUjian();
+    </script>
+</body>
+</html>
